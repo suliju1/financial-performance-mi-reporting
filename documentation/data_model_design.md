@@ -40,6 +40,6 @@ Each GL account is mapped to:
 - Normal accounting balance
 - Variance treatment
 
-Reporting classifications are maintained in master data rather than embedded directly in transactional records. This allows reporting structure to be changed without modifying historical transactions.
+Reporting classifications are maintained in master data rather than embedded directly in transactional records. This allows reporting structures to be changed without modifying historical transactions.
 
 

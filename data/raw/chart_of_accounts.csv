@@ -1,0 +1,39 @@
+account_code,account_name,account_type,pl_category,pl_subcategory,reporting_order,normal_balance,variance_logic
+4100,Core Platform Subscription Revenue,Revenue,Revenue,Subscription Revenue,110,Credit,Favourable
+4110,Analytics Subscription Revenue,Revenue,Revenue,Subscription Revenue,120,Credit,Favourable
+4120,Payments Subscription Revenue,Revenue,Revenue,Subscription Revenue,130,Credit,Favourable
+4200,Usage Revenue,Revenue,Revenue,Usage Revenue,140,Credit,Favourable
+4300,Professional Services Revenue,Revenue,Revenue,Professional Services Revenue,150,Credit,Favourable
+4400,Implementation Revenue,Revenue,Revenue,Professional Services Revenue,160,Credit,Favourable
+4900,Other Operating Revenue,Revenue,Revenue,Other Revenue,170,Credit,Favourable
+5100,Cloud Hosting Costs,Expense,Cost of Revenue,Hosting & Infrastructure,210,Debit,Unfavourable
+5110,Third Party Software Costs,Expense,Cost of Revenue,Hosting & Infrastructure,220,Debit,Unfavourable
+5200,Customer Support Costs,Expense,Cost of Revenue,Customer Support,230,Debit,Unfavourable
+5300,Payment Processing Fees,Expense,Cost of Revenue,Payment Processing,240,Debit,Unfavourable
+5400,Implementation Delivery Costs,Expense,Cost of Revenue,Implementation Costs,250,Debit,Unfavourable
+6100,Sales Salaries,Expense,Operating Expenses,Sales & Marketing,310,Debit,Unfavourable
+6110,Sales Commissions,Expense,Operating Expenses,Sales & Marketing,320,Debit,Unfavourable
+6120,Sales Travel & Entertainment,Expense,Operating Expenses,Sales & Marketing,330,Debit,Unfavourable
+6200,Marketing Salaries,Expense,Operating Expenses,Sales & Marketing,340,Debit,Unfavourable
+6210,Digital Advertising,Expense,Operating Expenses,Sales & Marketing,350,Debit,Unfavourable
+6220,Events & Sponsorship,Expense,Operating Expenses,Sales & Marketing,360,Debit,Unfavourable
+6230,Marketing Agencies,Expense,Operating Expenses,Sales & Marketing,370,Debit,Unfavourable
+6300,Engineering Salaries,Expense,Operating Expenses,Technology & R&D,410,Debit,Unfavourable
+6310,Engineering Contractors,Expense,Operating Expenses,Technology & R&D,420,Debit,Unfavourable
+6320,Developer Tools & Software,Expense,Operating Expenses,Technology & R&D,430,Debit,Unfavourable
+6330,Research & Development Projects,Expense,Operating Expenses,Technology & R&D,440,Debit,Unfavourable
+6400,IT Salaries,Expense,Operating Expenses,Technology & R&D,450,Debit,Unfavourable
+6410,Corporate IT Software,Expense,Operating Expenses,Technology & R&D,460,Debit,Unfavourable
+6420,IT Infrastructure,Expense,Operating Expenses,Technology & R&D,470,Debit,Unfavourable
+6600,Finance Salaries,Expense,Operating Expenses,General & Administrative,510,Debit,Unfavourable
+6610,Audit & Accounting Fees,Expense,Operating Expenses,General & Administrative,520,Debit,Unfavourable
+6620,Legal & Professional Fees,Expense,Operating Expenses,General & Administrative,530,Debit,Unfavourable
+6630,Insurance,Expense,Operating Expenses,General & Administrative,540,Debit,Unfavourable
+6640,Office & Facilities,Expense,Operating Expenses,General & Administrative,550,Debit,Unfavourable
+6650,Travel & Entertainment,Expense,Operating Expenses,General & Administrative,560,Debit,Unfavourable
+6660,Bank Charges,Expense,Operating Expenses,General & Administrative,570,Debit,Unfavourable
+6700,HR Salaries,Expense,Operating Expenses,People & HR,610,Debit,Unfavourable
+6710,Recruitment Costs,Expense,Operating Expenses,People & HR,620,Debit,Unfavourable
+6720,Training & Development,Expense,Operating Expenses,People & HR,630,Debit,Unfavourable
+6730,Employee Benefits,Expense,Operating Expenses,People & HR,640,Debit,Unfavourable
+6740,Staff Welfare,Expense,Operating Expenses,People & HR,650,Debit,Unfavourable

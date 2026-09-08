@@ -1,0 +1,5 @@
+entity_code,entity_name,country,currency,entity_type,active_flag
+ENT01,Aurelia Technologies UK Ltd,United Kingdom,GBP,Parent,Y
+ENT02,Aurelia Technologies Germany GmbH,Germany,EUR,Subsidiary,Y
+ENT03,Aurelia Technologies France SAS,France,EUR,Subsidiary,Y
+ENT04,Aurelia Technologies Netherlands BV,Netherlands,EUR,Subsidiary,Y

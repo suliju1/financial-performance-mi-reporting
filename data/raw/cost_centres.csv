@@ -1,0 +1,14 @@
+cost_centre_code,cost_centre_name,department,business_function,pl_reporting_group,manager_role,active_flag
+CC110,Executive Office,Executive,Corporate,General & Administrative,Chief Executive Officer,Y
+CC120,Finance,Finance,Corporate,General & Administrative,Finance Director,Y
+CC130,People & HR,Human Resources,Corporate,People & HR,Head of People,Y
+CC140,Legal & Compliance,Legal,Corporate,General & Administrative,General Counsel,Y
+CC210,Enterprise Sales,Sales,Commercial,Sales & Marketing,VP Enterprise Sales,Y
+CC220,Mid-Market Sales,Sales,Commercial,Sales & Marketing,VP Sales,Y
+CC230,Marketing,Marketing,Commercial,Sales & Marketing,Marketing Director,Y
+CC310,Engineering,Engineering,Technology,Technology & R&D,VP Engineering,Y
+CC320,Product Management,Product,Technology,Technology & R&D,Chief Product Officer,Y
+CC330,Corporate IT,Information Technology,Technology,Technology & R&D,Head of IT,Y
+CC410,Customer Support,Customer Support,Customer Operations,Cost of Revenue,Head of Customer Support,Y
+CC420,Professional Services,Professional Services,Customer Operations,Cost of Revenue,Professional Services Director,Y
+CC430,Implementation,Implementation,Customer Operations,Cost of Revenue,Head of Implementation,Y

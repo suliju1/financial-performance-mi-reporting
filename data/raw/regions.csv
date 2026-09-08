@@ -1,0 +1,5 @@
+region_code,region_name,region_group,active_flag
+REG01,UK & Ireland,Northern Europe,Y
+REG02,DACH,Central Europe,Y
+REG03,France,Western Europe,Y
+REG04,Benelux,Western Europe,Y

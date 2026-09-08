@@ -42,4 +42,27 @@ Each GL account is mapped to:
 
 Reporting classifications are maintained in master data rather than embedded directly in transactional records. This allows reporting structures to be changed without modifying historical transactions.
 
+## 3. Fact Tables
 
+### FactActual
+
+**Grain:** One row per general-ledger transaction line.
+
+The table will contain actual financial transactions extracted from the simulated ERP system.
+
+Key dimensions will include:
+
+- Posting Date
+- GL Account
+- Cost Centre
+- Product
+- Legal Entity
+- Region
+
+### FactBudget
+
+**Grain:** One row per month, account, cost centre, product, entity, region and budget version combination.
+
+The table will contain financial planning data extracted from the simulated planning system.
+
+FactActual and FactBudget will share conformed dimensions to allow consistent Actual vs Budget reporting.

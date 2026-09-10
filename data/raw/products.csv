@@ -1,4 +1,5 @@
 product_code,product_name,product_category,revenue_model,strategic_segment,active_flag
+P000,Corporate / Non-Product,Corporate,Non-Product,Corporate,Y
 P001,Core Platform,SaaS Platform,Subscription,Core,Y
 P002,Analytics,Data & Analytics,Subscription,Growth,Y
 P003,Payments,FinTech Services,Subscription & Usage,Growth,Y

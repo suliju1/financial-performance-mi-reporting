@@ -145,3 +145,87 @@ for account_code, cost_centre_mix in (
             f"Cost centre mix for {account_code} "
             "must sum to 1.0."
         )
+
+# Allocate the annual Cost of Revenue budget across the relevant GL accounts.
+# These weights represent the expected cost structure of the SaaS business
+# and must sum to 100% of total annual Cost of Revenue.
+COST_OF_REVENUE_ACCOUNT_MIX = {
+    "5100": 0.35,  # Cloud Hosting Costs
+    "5110": 0.15,  # Third Party Software Costs
+    "5200": 0.20,  # Customer Support Costs
+    "5300": 0.15,  # Payment Processing Fees
+    "5400": 0.15,  # Implementation Delivery Costs
+}
+
+if abs(sum(COST_OF_REVENUE_ACCOUNT_MIX.values()) - 1.0) > 0.000001:
+    raise ValueError(
+        "COST_OF_REVENUE_ACCOUNT_MIX must sum to 1.0."
+    )
+
+# Allocate the annual Operating Expense budget across the main management
+# P&L groups. Detailed GL-account allocation will be defined separately so
+# that the high-level management plan remains easy to understand and control.
+OPEX_GROUP_MIX = {
+    "Sales & Marketing": 0.28,
+    "Technology & R&D": 0.42,
+    "General & Administrative": 0.20,
+    "People & HR": 0.10,
+}
+
+if abs(sum(OPEX_GROUP_MIX.values()) - 1.0) > 0.000001:
+    raise ValueError(
+        "OPEX_GROUP_MIX must sum to 1.0."
+    )
+
+# Allocate each Operating Expense group across its underlying GL accounts.
+# The weights within each P&L group must sum to 100%, allowing the high-level
+# annual Opex plan to be translated into detailed account-level budgets.
+OPEX_ACCOUNT_MIX = {
+    "Sales & Marketing": {
+        "6100": 0.30,  # Sales Salaries
+        "6110": 0.12,  # Sales Commissions
+        "6120": 0.05,  # Sales Travel & Entertainment
+        "6200": 0.18,  # Marketing Salaries
+        "6210": 0.15,  # Digital Advertising
+        "6220": 0.08,  # Events & Sponsorship
+        "6230": 0.12,  # Marketing Agencies
+    },
+
+    "Technology & R&D": {
+        "6300": 0.42,  # Engineering Salaries
+        "6310": 0.12,  # Engineering Contractors
+        "6320": 0.08,  # Developer Tools & Software
+        "6330": 0.10,  # R&D Projects
+        "6400": 0.12,  # IT Salaries
+        "6410": 0.08,  # Corporate IT Software
+        "6420": 0.08,  # IT Infrastructure
+    },
+
+    "General & Administrative": {
+        "6600": 0.28,  # Finance Salaries
+        "6610": 0.10,  # Audit & Accounting Fees
+        "6620": 0.18,  # Legal & Professional Fees
+        "6630": 0.08,  # Insurance
+        "6640": 0.16,  # Office & Facilities
+        "6650": 0.10,  # Travel & Entertainment
+        "6660": 0.10,  # Bank Charges
+    },
+
+    "People & HR": {
+        "6700": 0.36,  # HR Salaries
+        "6710": 0.22,  # Recruitment Costs
+        "6720": 0.14,  # Training & Development
+        "6730": 0.18,  # Employee Benefits
+        "6740": 0.10,  # Staff Welfare
+    },
+}
+
+
+# Validate that the detailed account weights within every Opex group sum to
+# 100%. Any incorrect allocation stops the process before budget generation.
+for opex_group, account_mix in OPEX_ACCOUNT_MIX.items():
+    if abs(sum(account_mix.values()) - 1.0) > 0.000001:
+        raise ValueError(
+            f"Opex account mix for {opex_group} "
+            "must sum to 1.0."
+        )

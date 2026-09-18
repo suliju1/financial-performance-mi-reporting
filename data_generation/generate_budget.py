@@ -296,6 +296,16 @@ else:
 
 budget_df = pd.DataFrame(budget_rows)
 
+# Add source metadata required for downstream SQL ingestion.
+budget_df.insert(0,"budget_id", [f"BUD26-{row_number:06d}" for row_number in range(1,len(budget_df)+1)])
+budget_df["source_system"] = "Planning System"
+budget_df["load_date"] = date.today()
+
+# The FY2026 budget is generated and stored in the group's reporting currency. 
+# Local-currency budgeting and FX translation are left as a future enhancement.
+budget_df["budget_currency"] = "GBP"
+
+
 budget_grain = [
     "budget_month",
     "account_code",
@@ -306,7 +316,7 @@ budget_grain = [
     "budget_version"
 ]
 
-duplicated_budget_rows = (budget_df.duplicated(subset=budget_grain, keep=False))
+duplicated_budget_rows = (budget_df.duplicated(subset = budget_grain, keep = False))
 
 if duplicated_budget_rows.any():
     raise ValueError(
@@ -316,14 +326,49 @@ if duplicated_budget_rows.any():
 
 print("BUDGET GRAIN VALIDATION PASSED.")
 
+# Arrange the final budget dataset into a clear source-system schema before export so downstream SQL ingestion receives a stable column structure.
+budget_columns = [
+    "budget_id",
+    "budget_month",
+    "account_code",
+    "cost_centre_code",
+    "product_code",
+    "entity_code",
+    "region_code",
+    "budget_version",
+    "budget_currency",
+    "budget_amount",
+    "source_system",
+    "load_date"
+]
+
+budget_df = budget_df[budget_columns]
+
 # Export the validated FY2026 approved budget to the raw-data layer for subsequent SQL ingestion and transformation.
 budget_output_path = (RAW_DATA_DIR / "budget.csv")
 
 budget_df.to_csv(
     budget_output_path,
-    index=False,
-    float_format="%.2f"
+    index = False,
+    float_format ="%.2f"
 )
 
 print(f"Budget exported successfully to: {budget_output_path}.")
 print(f"Exported rows:{len(budget_df)}")
+
+# Perform a quick check on the final budget dataset before moving on to Actual data generation.
+print()
+print("Budget dataset preview:")
+print(budget_df.head(10))
+
+print()
+print("Budget dataset columns:")
+print(budget_df.columns.tolist())
+
+print()
+print("Missing values:")
+print(budget_df.isna().sum())
+
+print()
+print(f"Total rows: {len(budget_df):,}")
+print(f"Total budget amount: £{budget_df['budget_amount'].sum():,.2f}")

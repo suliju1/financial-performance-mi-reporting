@@ -238,7 +238,6 @@ financial-performance-mi-reporting/
 │
 ├── data/
 │   ├── raw/
-│   └── processed/
 │
 ├── data_generation/
 │

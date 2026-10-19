@@ -1,6 +1,6 @@
 # Financial Performance & MI Reporting Solution
 
-An End-to-end Finance Data and Management Information reporting Project designed to simulate a real-world Finance Systems / FP&A reporting environment.
+An end-to-end Finance Data and Management Information reporting solution designed to simulate a real-world Finance Systems / FP&A reporting environment.
 
 The project integrates Actual, Budget and finance master data through Python, SQL Server and Power BI to deliver controlled, reconciled and interactive management reporting.
 
@@ -69,6 +69,8 @@ The warehouse uses two fact tables at their natural grains:
 - **FactActual** - transaction-level General Ledger activity
 - **FactBudget** - monthly planning data
 
+Both fact tables share the following conformed dimensions:
+
 - Date
 - Account
 - Cost Centre
@@ -103,7 +105,7 @@ Three control layers are used:
 2. **Staging to data warehouse reconciliation**
 3. **Data warehouse to management P&L reconciliation**
 
-The following key P&L measure are reconciled through the reporting pipeline:
+The following key P&L measures are reconciled through the reporting pipeline:
 
 - Revenue
 - Cost of Revenue
@@ -122,7 +124,7 @@ The final Power BI report contains three management views.
 - Gross Margin %
 - EBITDA Margin %
 - Actual vs Budget Management P&L
-- favouorable / unfavourable variance indicators
+- favourable / unfavourable variance indicators
 - Entity, Region and Product filtering
 
 ![Executive Overview](screenshots/01_executive_overview.png)
@@ -135,7 +137,7 @@ Provides:
 - Revenue by Product;
 - Revenue by Region;
 - YTD Actual vs Budget comparison using a common reporting cut-off.
-![Executive Overview](screenshots/02_revenue_analysis.png)
+![Revenue Analysis](screenshots/02_revenue_analysis.png)
 
 ---
 ### 3. Cost Analysis
@@ -146,16 +148,16 @@ Provides:
 - Cost of Revenue by category;
 - Operating Expenses by Cost Centre;
 - visibility of controlled Unknown dimension members.
-![Executive Overview](screenshots/03_cost_analysis.png)
+![Cost Analysis](screenshots/03_cost_analysis.png)
 
 ---
 ## Key Reporting Logic
 ### Common Reporting Cut-off
 
-Actual data is available through **31 August 2026**, while the FY2026 Approved Budget covers the full financial year .
+Actual data is available through **31 August 2026**, while the FY2026 Approved Budget covers the full financial year.
 
-YTD Measures therefore use the latest available Actual date as the reporting cut-off so that Actual and Budget are compared on a like-for-like basis.
-### Favorable / Unfavorable Variance
+YTD measures therefore use the latest available Actual date as the reporting cut-off so that Actual and Budget are compared on a like-for-like basis.
+### Favourable / Unfavourable Variance
 
 Variance direction reflects the financial nature of the metric:
 - **Revenue / Gross Profit / EBITDA** - higher is favourable
@@ -193,7 +195,7 @@ Actual and Budget share the same dimensions, allowing consistent comparison acro
 
 ### Controlled Unknown Members
 
-Transactions with financially valid amounts but incomplete dimentsional data are mapped to controlled Unknown members rather than being removed. This  preserves financial completeness while keeping data-quality exceptions visible.
+Transactions with financially valid amounts but incomplete dimensional data are mapped to controlled Unknown members rather than being removed. This  preserves financial completeness while keeping data-quality exceptions visible.
 
 ### SQL vs Power BI Responsibility
 
@@ -227,7 +229,7 @@ Examples:
 |Data modelling|Dimensional modelling|
 |Reporting|Power BI|
 |Calculations|DAX|
-|Version Control|Git / Github|
+|Version Control|Git / GitHub|
 
 ---
 ## Repository Structure
@@ -271,11 +273,11 @@ financial-performance-mi-reporting/
 
 ## Project Highlights
 
-- Build an end-to-end Finance reporting pipeline from source generation to executive dashboards.
+- Built an end-to-end Finance reporting pipeline from source generation to executive dashboards.
 - Designed separate Actual and Budget fact tables using shared conformed dimensions.
 - Implemented controlled data-quality exceptions and Unknown dimension handling.
 - Built multi-stage financial reconciliation controls.
-- Create SQL-driven management P&L reporting metadata.
+- Created SQL-driven management P&L reporting metadata.
 - Developed YTD, margin and favourable / unfavourable variance logic in DAX.
 - Delivered Executive, Revenue and Cost management reporting views in Power BI.
 ---
